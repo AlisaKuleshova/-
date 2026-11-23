@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Бренд одежды NOVA Wear — базовые вещи для повседневного гардероба">
+
+  <title>NOVA Wear — бренд одежды</title>
+
+  <style>
+
+    :root {
+
+      --graphite: #2f3237;
+
+      --graphite-dark: #1f2126;
+
+      --sand: #f7f2ea;
+
+      --text: #2b2e33;
+
+      --muted: #6f747c;
+
+      --white: #fff;
+
+      --shadow: 0 12px 32px rgb(31 33 38 / 10%);
+
+    }
+
+    * {
+
+      box-sizing: border-box;
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+    html {
+
+      scroll-behavior: smooth;
+
+      scroll-padding-top: 85px;
+
+    }
+
+    body {
+
+      color: var(--text);
+
+      background: var(--white);
+
+      font-family: Arial, Helvetica, sans-serif;
+
+      line-height: 1.6;
+
+    }
+
+    button,
+
+    input {
+
+      font: inherit;
+
+    }
+
+    button {
+
+      cursor: pointer;
+
+    }
+
+    .container {
+
+      width: min(1120px, calc(100% - 40px));
+
+      margin-inline: auto;
+
+    }
+
+    .header {
+
+      position: sticky;
+
+      z-index: 10;
+
+      top: 0;
+
+      border-bottom: 1px solid #eee9e0;
+
+      background: rgb(255 255 255 / 95%);
+
+      backdrop-filter: blur(10px);
+
+    }
+
+    .header-inner {
+
+      min-height: 72px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 24px;
+
+    }
+
+    .logo {
+
+      color: var(--graphite);
+
+      font-size: 1.2rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.08em;
+
+      text-decoration: none;
+
+      white-space: nowrap;
+
+      text-transform: uppercase;
+
+    }
+
+    .nav {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 22px;
+
+    }
+
+    .nav a,
+
+    .menu-toggle {
+
+      color: var(--text);
+
+      font-size: 0.94rem;
+
+      text-decoration: none;
+
+    }
+
+    .nav a:hover {
+
+      color: #b5713f;
+
+    }
+
+    .menu-wrap {
+
+      position: relative;
+
+    }
+
+    .menu-toggle {
+
+      padding: 8px 12px;
+
+      border: 1px solid #e5dfd4;
+
+      border-radius: 10px;
+
+      background: var(--white);
+
+    }
+
+    .dropdown {
+
+      position: absolute;
+
+      top: calc(100% + 10px);
+
+      right: 0;
+
+      display: none;
+
+      min-width: 180px;
+
+      padding: 8px;
+
+      border: 1px solid #e9e3d9;
+
+      border-radius: 12px;
+
+      background: var(--white);
+
+      box-shadow: var(--shadow);
+
+    }
+
+    .dropdown.open {
+
+      display: grid;
+
+    }
+
+    .dropdown a {
+
+      padding: 9px 10px;
+
+      border-radius: 8px;
+
+    }
+
+    .dropdown a:hover {
+
+      background: var(--sand);
+
+    }
+
+    .hero {
+
+      padding: 78px 0;
+
+      background:
+
+        radial-gradient(circle at 85% 20%, #e9d4bd 0, transparent 26%),
+
+        var(--sand);
+
+    }
+
+    .hero-grid {
+
+      display: grid;
+
+      grid-template-columns: 1.1fr 0.9fr;
+
+      align-items: center;
+
+      gap: 48px;
+
+    }
+
+    .eyebrow {
+
+      margin-bottom: 14px;
+
+      color: #b5713f;
+
+      font-size: 0.85rem;
+
+      font-weight: 700;
+
+      letter-spacing: 0.1em;
+
+      text-transform: uppercase;
+
+    }
+
+    h1,
+
+    h2,
+
+    h3 {
+
+      line-height: 1.2;
+
+    }
+
+    h1 {
+
+      max-width: 650px;
+
+      margin-bottom: 20px;
+
+      font-size: clamp(2.4rem, 5vw, 4.3rem);
+
+      letter-spacing: -0.04em;
+
+    }
+
+    .hero-text {
+
+      max-width: 530px;
+
+      margin-bottom: 28px;
+
+      color: var(--muted);
+
+      font-size: 1.1rem;
+
+    }
+
+    .button {
+
+      display: inline-block;
+
+      padding: 13px 22px;
+
+      color: var(--white);
+
+      border: 0;
+
+      border-radius: 10px;
+
+      background: var(--graphite);
+
+      font-weight: 700;
+
+      text-decoration: none;
+
+      transition: background 0.2s, transform 0.2s;
+
+    }
+
+    .button:hover {
+
+      transform: translateY(-2px);
+
+      background: var(--graphite-dark);
+
+    }
+
+    .hero-photo {
+
+      display: block;
+
+      width: 100%;
+
+      height: 360px;
+
+      object-fit: cover;
+
+      border-radius: 26px;
+
+      box-shadow: var(--shadow);
+
+    }
+
+    section {
+
+      padding: 76px 0;
+
+    }
+
+    .section-heading {
+
+      max-width: 680px;
+
+      margin: 0 auto 36px;
+
+      text-align: center;
+
+    }
+
+    .section-heading h2 {
+
+      margin-bottom: 12px;
+
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+
+    }
+
+    .section-heading p {
+
+      color: var(--muted);
+
+    }
+
+    /* Карточки товаров с переворотом */
+
+    .products {
+
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 20px;
+
+    }
+
+    .product-card {
+
+      height: 420px;
+
+      perspective: 1000px;
+
+    }
+
+    .product-card-inner {
+
+      position: relative;
+
+      width: 100%;
+
+      height: 100%;
+
+      border-radius: 18px;
+
+      transition: transform 0.7s ease;
+
+      transform-style: preserve-3d;
+
+    }
+
+    .product-card:hover .product-card-inner,
+
+    .product-card:focus-within .product-card-inner,
+
+    .product-card.is-flipped .product-card-inner {
+
+      transform: rotateY(180deg);
+
+    }
+
+    .product-front,
+
+    .product-back {
+
+      position: absolute;
+
+      inset: 0;
+
+      overflow: hidden;
+
+      border: 1px solid #eee9e0;
+
+      border-radius: 18px;
+
+      background: var(--white);
+
+      box-shadow: 0 4px 18px rgb(31 33 38 / 8%);
+
+      backface-visibility: hidden;
+
+      -webkit-backface-visibility: hidden;
+
+    }
+
+    .product-front {
+
+      display: flex;
+
+      flex-direction: column;
+
+    }
+
+    .product-photo {
+
+      display: block;
+
+      width: 100%;
+
+      height: 220px;
+
+      object-fit: cover;
+
+    }
+
+    .product-info {
+
+      display: flex;
+
+      flex: 1;
+
+      flex-direction: column;
+
+      align-items: flex-start;
+
+      padding: 20px;
+
+    }
+
+    .product-info h3 {
+
+      margin-bottom: 8px;
+
+    }
+
+    .product-info p {
+
+      margin-bottom: 12px;
+
+      color: var(--muted);
+
+    }
+
+    .price {
+
+      color: #b5713f;
+
+      font-size: 1.2rem;
+
+      font-weight: 800;
+
+    }
+
+    .product-info .price {
+
+      margin-top: auto;
+
+      margin-bottom: 12px;
+
+    }
+
+    .flip-button {
+
+      padding: 8px 14px;
+
+      color: var(--graphite);
+
+      border: 1px solid #e5dfd4;
+
+      border-radius: 8px;
+
+      background: var(--white);
+
+      font-weight: 700;
+
+    }
+
+    .flip-button:hover {
+
+      background: var(--sand);
+
+    }
+
+    .product-back {
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: flex-start;
+
+      justify-content: center;
+
+      gap: 14px;
+
+      padding: 25px;
+
+      background: var(--sand);
+
+      transform: rotateY(180deg);
+
+    }
+
+    .product-back p {
+
+      color: var(--muted);
+
+    }
+
+    .calculator-section {
+
+      background: var(--sand);
+
+    }
+
+    .calculator {
+
+      max-width: 600px;
+
+      margin: auto;
+
+      padding: 30px;
+
+      border-radius: 18px;
+
+      background: var(--white);
+
+      box-shadow: var(--shadow);
+
+    }
+
+    .calculator label {
+
+      display: block;
+
+      margin-bottom: 8px;
+
+      font-weight: 700;
+
+    }
+
+    .calculator input {
+
+      width: 100%;
+
+      margin-bottom: 20px;
+
+      padding: 12px 14px;
+
+      border: 1px solid #e5dfd4;
+
+      border-radius: 9px;
+
+    }
+
+    .calculator input:focus {
+
+      outline: 2px solid #d9b896;
+
+      border-color: transparent;
+
+    }
+
+    .result {
+
+      margin-top: 20px;
+
+      padding: 16px;
+
+      border-radius: 10px;
+
+      background: #f2ece2;
+
+      font-weight: 700;
+
+    }
+
+    .slider {
+
+      max-width: 760px;
+
+      margin: auto;
+
+      text-align: center;
+
+    }
+
+    .slide {
+
+      display: none;
+
+      min-height: 230px;
+
+      padding: 40px 30px;
+
+      border-radius: 18px;
+
+      background: var(--sand);
+
+    }
+
+    .slide.active {
+
+      display: grid;
+
+      align-content: center;
+
+      gap: 12px;
+
+      animation: appear 0.35s ease;
+
+    }
+
+    .slide .quote {
+
+      color: #b5713f;
+
+      font-size: 2rem;
+
+    }
+
+    .slide p {
+
+      font-size: 1.1rem;
+
+    }
+
+    .slide small {
+
+      color: var(--muted);
+
+    }
+
+    .slider-controls {
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 12px;
+
+      margin-top: 18px;
+
+    }
+
+    .slider-controls button {
+
+      width: 44px;
+
+      height: 44px;
+
+      color: var(--graphite);
+
+      border: 1px solid #e5dfd4;
+
+      border-radius: 50%;
+
+      background: var(--white);
+
+      font-size: 1.2rem;
+
+    }
+
+    .faq {
+
+      max-width: 760px;
+
+      margin: auto;
+
+    }
+
+    .faq-item {
+
+      border-bottom: 1px solid #e9e3d9;
+
+    }
+
+    .faq-question {
+
+      display: flex;
+
+      width: 100%;
+
+      justify-content: space-between;
+
+      gap: 15px;
+
+      padding: 19px 0;
+
+      color: var(--text);
+
+      border: 0;
+
+      background: transparent;
+
+      text-align: left;
+
+      font-weight: 700;
+
+    }
+
+    .faq-answer {
+
+      display: none;
+
+      padding: 0 30px 18px 0;
+
+      color: var(--muted);
+
+    }
+
+    .faq-item.open .faq-answer {
+
+      display: block;
+
+    }
+
+    .faq-item.open .faq-icon {
+
+      transform: rotate(45deg);
+
+    }
+
+    .faq-icon {
+
+      color: #b5713f;
+
+      font-size: 1.3rem;
+
+      transition: transform 0.2s;
+
+    }
+
+    .footer {
+
+      padding: 28px 0;
+
+      color: #e7e2d9;
+
+      background: var(--graphite-dark);
+
+      text-align: center;
+
+    }
+
+    @keyframes appear {
+
+      from {
+
+        opacity: 0;
+
+        transform: translateY(8px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+      }
+
+    }
+
+    @media (max-width: 760px) {
+
+      .header-inner {
+
+        flex-wrap: wrap;
+
+        padding: 14px 0;
+
+      }
+
+      .nav {
+
+        order: 3;
+
+        width: 100%;
+
+        flex-wrap: wrap;
+
+        justify-content: space-between;
+
+        gap: 12px;
+
+      }
+
+      .nav a {
+
+        font-size: 0.85rem;
+
+      }
+
+      .hero {
+
+        padding: 55px 0;
+
+      }
+
+      .hero-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+      }
+
+      .hero-photo {
+
+        height: 250px;
+
+      }
+
+      .products {
+
+        grid-template-columns: 1fr;
+
+      }
+
+      .product-card {
+
+        height: 420px;
+
+      }
+
+      section {
+
+        padding: 56px 0;
+
+      }
+
+    }
+
+    @media (max-width: 420px) {
+
+      .container {
+
+        width: min(100% - 28px, 1120px);
+
+      }
+
+      .calculator {
+
+        padding: 22px;
+
+      }
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+
+        scroll-behavior: auto;
+
+      }
+
+      .product-card-inner {
+
+        transition: none;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <header class="header">
+
+    <div class="container header-inner">
+
+      <a class="logo" href="#home">NOVA Wear</a>
+
+      <nav class="nav" aria-label="Основная навигация">
+
+        <a href="#products">Каталог</a>
+
+        <a href="#calculator">Калькулятор</a>
+
+        <a href="#reviews">Отзывы</a>
+
+        <a href="#faq">Вопросы</a>
+
+        <div class="menu-wrap">
+
+          <button
+
+            class="menu-toggle"
+
+            id="menuToggle"
+
+            type="button"
+
+            aria-expanded="false"
+
+            aria-controls="dropdownMenu"
+
+          >
+
+            Ещё ▾
+
+          </button>
+
+          <div class="dropdown" id="dropdownMenu">
+
+            <a href="#products">Новинки сезона</a>
+
+            <a href="#calculator">Доставка и цена</a>
+
+            <a href="#faq">Помощь</a>
+
+          </div>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="container hero-grid">
+
+        <div>
+
+          <p class="eyebrow">Одежда, с которой удобно жить</p>
+
+          <h1>Базовый гардероб, который вы будете носить годами</h1>
+
+          <p class="hero-text">
+
+            NOVA Wear — минималистичная одежда из натуральных тканей.
+
+            Простые силуэты, честные материалы и цены без переплат.
+
+          </p>
+
+          <a class="button" href="#products">Смотреть каталог</a>
+
+        </div>
+
+        <img
+
+          class="hero-photo"
+
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/Clothes%20hangers%20on%20railing%20%28Unsplash%29.jpg"
+
+          alt="Одежда на вешалках у окна"
+
+          fetchpriority="high"
+
+        >
+
+      </div>
+
+    </section>
+
+    <section id="products">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <p class="eyebrow">Наш выбор</p>
+
+          <h2>Популярные модели</h2>
+
+          <p>Наведите на карточку или нажмите «Подробнее», чтобы увидеть описание.</p>
+
+        </div>
+
+        <div class="products">
+
+          <article class="product-card">
+
+            <div class="product-card-inner">
+
+              <div class="product-front">
+
+                <img
+
+                  class="product-photo"
+
+                  src="https://commons.wikimedia.org/wiki/Special:FilePath/T-Shirt.jpg"
+
+                  alt="Базовая футболка"
+
+                  loading="lazy"
+
+                >
+
+                <div class="product-info">
+
+                  <h3>Футболка базовая</h3>
+
+                  <p>Плотный хлопок, прямая посадка.</p>
+
+                  <span class="price">1 590 ₽</span>
+
+                  <button class="flip-button" type="button">Подробнее</button>
+
+                </div>
+
+              </div>
+
+              <div class="product-back">
+
+                <h3>Футболка базовая</h3>
+
+                <p>
+
+                  100% хлопок 190 г/м². Не растягивается после стирки,
+
+                  подходит для повседневных образов.
+
+                </p>
+
+                <span class="price">1 590 ₽</span>
+
+                <a class="button" href="#calculator">Рассчитать заказ</a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <article class="product-card">
+
+            <div class="product-card-inner">
+
+              <div class="product-front">
+
+                <img
+
+                  class="product-photo"
+
+                  src="https://commons.wikimedia.org/wiki/Special:FilePath/Laughing%20woman%20in%20jean%20jacket%20%28Unsplash%29.jpg"
+
+                  alt="Джинсовая куртка"
+
+                  loading="lazy"
+
+                >
+
+                <div class="product-info">
+
+                  <h3>Джинсовая куртка</h3>
+
+                  <p>Плотный деним, оверсайз-крой.</p>
+
+                  <span class="price">4 290 ₽</span>
+
+                  <button class="flip-button" type="button">Подробнее</button>
+
+                </div>
+
+              </div>
+
+              <div class="product-back">
+
+                <h3>Джинсовая куртка</h3>
+
+                <p>
+
+                  Деним 98% хлопок, 2% эластан. Свободный крой
+
+                  сочетается с любым гардеробом.
+
+                </p>
+
+                <span class="price">4 290 ₽</span>
+
+                <a class="button" href="#calculator">Рассчитать заказ</a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <article class="product-card">
+
+            <div class="product-card-inner">
+
+              <div class="product-front">
+
+                <img
+
+                  class="product-photo"
+
+                  src="https://commons.wikimedia.org/wiki/Special:FilePath/Ocean%20Blue%20Outfit%20%28Unsplash%29.jpg"
+
+                  alt="Летний образ в голубых тонах"
+
+                  loading="lazy"
+
+                >
+
+                <div class="product-info">
+
+                  <h3>Комплект на лето</h3>
+
+                  <p>Лёгкие ткани для тёплых дней.</p>
+
+                  <span class="price">3 490 ₽</span>
+
+                  <button class="flip-button" type="button">Подробнее</button>
+
+                </div>
+
+              </div>
+
+              <div class="product-back">
+
+                <h3>Комплект на лето</h3>
+
+                <p>
+
+                  Дышащие натуральные ткани и спокойные оттенки —
+
+                  комфорт в любую жару.
+
+                </p>
+
+                <span class="price">3 490 ₽</span>
+
+                <a class="button" href="#calculator">Рассчитать заказ</a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="calculator-section" id="calculator">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <p class="eyebrow">Планируйте покупку</p>
+
+          <h2>Калькулятор заказа</h2>
+
+          <p>Укажите количество и цену вещей — посчитаем стоимость.</p>
+
+        </div>
+
+        <form class="calculator" id="orderForm">
+
+          <label for="quantity">Количество вещей</label>
+
+          <input id="quantity" type="number" min="1" max="100" value="1" required>
+
+          <label for="itemPrice">Цена одной вещи, ₽</label>
+
+          <input id="itemPrice" type="number" min="0" value="1590" required>
+
+          <button class="button" type="submit">Рассчитать</button>
+
+          <div class="result" id="orderResult" aria-live="polite">
+
+            Итоговая стоимость: 1 940 ₽, включая доставку 350 ₽.
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </section>
+
+    <section id="reviews">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <p class="eyebrow">Нам доверяют</p>
+
+          <h2>Отзывы покупателей</h2>
+
+        </div>
+
+        <div class="slider" aria-label="Слайдер отзывов">
+
+          <article class="slide active">
+
+            <span class="quote" aria-hidden="true">“</span>
+
+            <p>«Футболка отличная, ткань плотная, села по размеру!»</p>
+
+            <small>Анна, покупательница</small>
+
+          </article>
+
+          <article class="slide">
+
+            <span class="quote" aria-hidden="true">“</span>
+
+            <p>«Заказала куртку и худи — качество приятно удивило.»</p>
+
+            <small>Мария, покупательница</small>
+
+          </article>
+
+          <article class="slide">
+
+            <span class="quote" aria-hidden="true">“</span>
+
+            <p>«Ношу уже полгода, выглядит как новая. Закажу ещё.»</p>
+
+            <small>Екатерина, покупательница</small>
+
+          </article>
+
+          <div class="slider-controls">
+
+            <button type="button" id="prevSlide" aria-label="Предыдущий отзыв">←</button>
+
+            <button type="button" id="nextSlide" aria-label="Следующий отзыв">→</button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="faq">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <p class="eyebrow">Есть вопросы?</p>
+
+          <h2>Часто спрашивают</h2>
+
+        </div>
+
+        <div class="faq">
+
+          <article class="faq-item">
+
+            <button class="faq-question" type="button" aria-expanded="false">
+
+              <span>Сколько стоит доставка?</span>
+
+              <span class="faq-icon" aria-hidden="true">+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              Доставка стоит 350 ₽. При заказе от 7 000 ₽ она бесплатная.
+
+            </div>
+
+          </article>
+
+          <article class="faq-item">
+
+            <button class="faq-question" type="button" aria-expanded="false">
+
+              <span>Как быстро отправляется заказ?</span>
+
+              <span class="faq-icon" aria-hidden="true">+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              Обычно заказ передаётся в доставку в течение 1–2 рабочих дней.
+
+            </div>
+
+          </article>
+
+          <article class="faq-item">
+
+            <button class="faq-question" type="button" aria-expanded="false">
+
+              <span>Можно ли обменять вещь, если не подошёл размер?</span>
+
+              <span class="faq-icon" aria-hidden="true">+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              Да, обмен доступен в течение 14 дней, если бирки и упаковка сохранены.
+
+            </div>
+
+          </article>
+
+          <article class="faq-item">
+
+            <button class="faq-question" type="button" aria-expanded="false">
+
+              <span>Как ухаживать за вещами?</span>
+
+              <span class="faq-icon" aria-hidden="true">+</span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              Стирайте при 30 °C на деликатном режиме и сушите в расправленном виде.
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+
+    <div class="container">
+
+      © <span id="year"></span> NOVA Wear — бренд повседневной одежды
+
+    </div>
+
+  </footer>
+
+  <script>
+
+    // Выпадающее меню
+
+    const menuToggle = document.querySelector("#menuToggle");
+
+    const dropdownMenu = document.querySelector("#dropdownMenu");
+
+    menuToggle.addEventListener("click", () => {
+
+      const isOpen = dropdownMenu.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+    });
+
+    document.addEventListener("click", (event) => {
+
+      if (!event.target.closest(".menu-wrap")) {
+
+        dropdownMenu.classList.remove("open");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+      }
+
+    });
+
+    dropdownMenu.querySelectorAll("a").forEach((link) => {
+
+      link.addEventListener("click", () => {
+
+        dropdownMenu.classList.remove("open");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+      });
+
+    });
+
+    // Переворот карточек по нажатию на кнопку — удобно на телефоне
+
+    document.querySelectorAll(".flip-button").forEach((button) => {
+
+      button.addEventListener("click", () => {
+
+        const card = button.closest(".product-card");
+
+        card.classList.toggle("is-flipped");
+
+      });
+
+    });
+
+    // Калькулятор: доставка 350 ₽, бесплатно от 7 000 ₽
+
+    const orderForm = document.querySelector("#orderForm");
+
+    const quantityInput = document.querySelector("#quantity");
+
+    const priceInput = document.querySelector("#itemPrice");
+
+    const orderResult = document.querySelector("#orderResult");
+
+    orderForm.addEventListener("submit", (event) => {
+
+      event.preventDefault();
+
+      const quantity = Number(quantityInput.value);
+
+      const price = Number(priceInput.value);
+
+      if (
+
+        !Number.isFinite(quantity) ||
+
+        !Number.isFinite(price) ||
+
+        quantity < 1 ||
+
+        price < 0
+
+      ) {
+
+        orderResult.textContent = "Введите корректные значения.";
+
+        return;
+
+      }
+
+      const subtotal = quantity * price;
+
+      const delivery = subtotal >= 7000 ? 0 : 350;
+
+      const total = subtotal + delivery;
+
+      const formatPrice = (value) =>
+
+        new Intl.NumberFormat("ru-RU").format(value);
+
+      orderResult.textContent = delivery === 0
+
+        ? `Итоговая стоимость: ${formatPrice(total)} ₽. Доставка бесплатная.`
+
+        : `Итоговая стоимость: ${formatPrice(total)} ₽, доставка ${formatPrice(delivery)} ₽.`;
+
+    });
+
+    // Слайдер отзывов
+
+    const slides = [...document.querySelectorAll(".slide")];
+
+    let currentSlide = 0;
+
+    function showSlide(index) {
+
+      slides[currentSlide].classList.remove("active");
+
+      currentSlide = (index + slides.length) % slides.length;
+
+      slides[currentSlide].classList.add("active");
+
+    }
+
+    document.querySelector("#prevSlide").addEventListener("click", () => {
+
+      showSlide(currentSlide - 1);
+
+    });
+
+    document.querySelector("#nextSlide").addEventListener("click", () => {
+
+      showSlide(currentSlide + 1);
+
+    });
+
+    // FAQ-аккордеон: одновременно открыт максимум один пункт
+
+    document.querySelectorAll(".faq-question").forEach((button) => {
+
+      button.addEventListener("click", () => {
+
+        const item = button.closest(".faq-item");
+
+        const wasOpen = item.classList.contains("open");
+
+        document.querySelectorAll(".faq-item").forEach((faqItem) => {
+
+          faqItem.classList.remove("open");
+
+          faqItem.querySelector(".faq-question")
+
+            .setAttribute("aria-expanded", "false");
+
+        });
+
+        if (!wasOpen) {
+
+          item.classList.add("open");
+
+          button.setAttribute("aria-expanded", "true");
+
+        }
+
+      });
+
+    });
+
+    // Автоматический год в подвале
+
+    document.querySelector("#year").textContent = new Date().getFullYear();
+
+  </script>
+
+</body>
+
+</html>
