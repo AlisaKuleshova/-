@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Дока — Что на самом деле делает дизайн</title>
+  <style>
+    /* ===== Подключение шрифта ===== */
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap');
+
+    /* ===== Общие стили ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      background: #fafafa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ===== Шапка с навигацией ===== */
+    nav {
+      background: #222;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .logo {
+      color: #fd0202;
+      font-weight: 800;
+      font-size: 20px;
+      margin-right: 20px;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #fd0202;
+    }
+
+    nav a.active {
+      color: #fd0202;
+      border-bottom: 2px solid #fd0202;
+    }
+
+    /* ===== Заголовки ===== */
+    h1 {
+      color: #fd0202;
+      text-align: center;
+      font-weight: 700;
+      padding: 30px 20px 10px;
+    }
+
+    h2, h3 {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    h2 em, h3 em {
+      color: #555;
+    }
+
+    /* ===== Основной блок ===== */
+    main {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      padding: 30px 25px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    p {
+      font-size: 16px;
+      padding: 8px 0 8px 20px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      margin: 20px auto;
+      border-radius: 8px;
+    }
+
+    ul {
+      margin: 10px 0 10px 40px;
+    }
+
+    ul li {
+      padding: 5px 0;
+    }
+
+    /* ===== Кнопка-ссылка ===== */
+    .button-link {
+      display: inline-block;
+      background: #fd0202;
+      color: #ffffff;
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 20px 0 0 20px;
+      transition: background 0.2s;
+    }
+
+    .button-link:hover {
+      background: #c40101;
+    }
+
+    /* ===== Форма на странице контактов ===== */
+    form {
+      max-width: 500px;
+      margin: 20px auto 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin: 12px 0 5px;
+      font-weight: 600;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+      font-family: inherit;
+      font-size: 16px;
+    }
+
+    input:focus, textarea:focus {
+      outline: 2px solid #fd0202;
+      border-color: #fd0202;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      background: #fd0202;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #c40101;
+    }
+
+    /* ===== Подвал ===== */
+    footer {
+      background: #cccccc;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    /* ===== Переключение страниц =====
+       Видима только та секция, у которой есть класс .visible */
+    .page {
+      display: none;
+    }
+
+    .page.visible {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= Шапка ================= -->
+  <nav>
+    <span class="logo">Дока</span>
+    <a class="active" data-page="home" onclick="showPage('home', this)">Главная</a>
+    <a data-page="about" onclick="showPage('about', this)">О статье</a>
+    <a data-page="contacts" onclick="showPage('contacts', this)">Контакты</a>
+  </nav>
+
+  <!-- ================= Страница 1: Главная ================= -->
+  <section id="home" class="page visible">
+    <h1>Что на самом деле делает дизайн: не просто «красиво», а удобно и понятно</h1>
+
+    <main>
+      <h2><em>Дизайн как язык общения</em></h2>
+
+      <p>
+        Дизайн — это способ передать смысл без слов. Логотип, кнопка, вывеска,
+        иконка в приложении — всё это визуальные сигналы, которые мы считываем
+        за доли секунды. Хороший дизайн не заставляет нас гадать: он сразу даёт
+        ответ на главные вопросы: «Что это?», «Что мне с этим делать?», «Куда идти?».
+      </p>
+
+      <img src="https://cdn.hipolink.net/ce517a7b-7531-4257-b94c-417d0bfcd5ae"
+           alt="Пример композиции с красной кнопкой">
+
+      <p>
+        Например, красная кнопка «Купить» на сайте работает не только за счёт
+        цвета — она стоит в нужном месте, имеет понятный текст и достаточный
+        размер, чтобы по ней было удобно нажать даже на смартфоне. Это уже не
+        про красоту, а про пользовательский опыт (UX).
+      </p>
+
+      <h3><em>Базовые принципы, которые работают везде</em></h3>
+
+      <p>Некоторые правила универсальны для любого направления — от графики до интерьеров:</p>
+
+      <ul>
+        <li><strong>Иерархия.</strong> Важное — крупнее, ярче, выше. Так взгляд сразу попадает туда, куда нужно.</li>
+        <li><strong>Контраст.</strong> Помогает выделять элементы: тёмный текст на светлом фоне, акцентная кнопка среди нейтральных блоков.</li>
+        <li><strong>Повторение.</strong> Одинаковые шрифты, цвета, отступы создают ощущение порядка и помогают быстрее ориентироваться.</li>
+        <li><strong>Пространство.</strong> «Воздух» вокруг элементов делает композицию чище и снижает усталость от визуального шума.</li>
+        <li><strong>Выравнивание.</strong> Ровные линии подсознательно ассоциируются с профессионализмом.</li>
+      </ul>
+
+      <a class="button-link" href="https://netology.ru/blog/chto-takoe-dizajn">
+        Дополнительные материалы
+      </a>
+
+      <h3><em>Как понять, что дизайн хороший</em></h3>
+
+      <p>
+        Есть простой тест: если человек быстро находит нужную информацию,
+        понимает, что делать дальше, и при этом испытывает положительные эмоции —
+        значит, дизайн справился со своей задачей. Хороший дизайн незаметен:
+        он не кричит о себе, а просто помогает. Именно поэтому лучшие решения
+        кажутся «очевидными» — хотя за этой простотой стоят часы исследований,
+        тестов и доработок.
+      </p>
+    </main>
+  </section>
+
+  <!-- ================= Страница 2: О статье ================= -->
+  <section id="about" class="page">
+    <h1>О статье</h1>
+
+    <main>
+      <h2>Для чего она написана</h2>
+
+      <p>
+        Статья «Что на самом деле делает дизайн» задумана как введение в тему
+        для тех, кто только начинает знакомиться с дизайном. Она объясняет:
+        дизайн — это не украшательство, а инструмент общения между человеком
+        и интерфейсом, продуктом или пространством.
+      </p>
+
+      <h2>Краткая информация</h2>
+
+      <ul>
+        <li><strong>Автор:</strong> Кулешова Алиса</li>
+        <li><strong>Дата публикации:</strong> 19.10.2026</li>
+        <li><strong>Тема:</strong> основы дизайна и пользовательского опыта (UX)</li>
+        <li><strong>Аудитория:</strong> начинающие дизайнеры и все, кому интересна тема</li>
+      </ul>
+
+      <h2>Что дальше</h2>
+
+      <p>
+        В следующих материалах планируется разобрать цветовые схемы,
+        типографику и способы тестировать дизайн на реальных людях.
+      </p>
+    </main>
+  </section>
+
+  <!-- ================= Страница 3: Контакты ================= -->
+  <section id="contacts" class="page">
+    <h1>Контакты</h1>
+
+    <main>
+      <h2>Напишите автору</h2>
+
+      <p>
+        Если у вас есть вопросы о статье, предложения по темам или вы просто
+        хотите обсудить дизайн — заполните форму ниже. Я отвечу как можно быстрее!
+      </p>
+
+      <form onsubmit="sendMessage(event)">
+        <label for="name">Ваше имя</label>
+        <input type="text" id="name" name="name" placeholder="Например: Мария" required>
+
+        <label for="email">Ваш e-mail</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+        <label for="message">Сообщение</label>
+        <textarea id="message" name="message" placeholder="Ваше сообщение..." required></textarea>
+
+        <button type="submit">Отправить</button>
+      </form>
+    </main>
+  </section>
+
+  <!-- ================= Подвал ================= -->
+  <footer>
+    <p>Автор: Кулешова Алиса</p>
+    <p>Дата: 19.10.2026</p>
+  </footer>
+
+  <!-- ================= Скрипт ================= -->
+  <script>
+    // Переключение страниц: скрываем все секции, показываем нужную
+    function showPage(pageId, link) {
+      // Скрываем все страницы
+      document.querySelectorAll('.page').forEach(function (page) {
+        page.classList.remove('visible');
+      });
+
+      // Показываем выбранную
+      document.getElementById(pageId).classList.add('visible');
+
+      // Подсвечиваем активную ссылку в меню
+      document.querySelectorAll('nav a').forEach(function (a) {
+        a.classList.remove('active');
+      });
+      link.classList.add('active');
+
+      // Прокручиваем окно наверх при переходе
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Обработка формы (пока без сервера — просто показываем сообщение)
+    function sendMessage(event) {
+      event.preventDefault();
+      var name = document.getElementById('name').value;
+      alert('Спасибо, ' + name + '! Ваше сообщение получено.');
+      event.target.reset();
+    }
+  </script>
+
+</body>
+</html>
